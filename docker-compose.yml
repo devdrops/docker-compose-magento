@@ -1,10 +1,24 @@
 version: '2'
 
 services:
-  gsd:
-    image: alankent/gsd:0.5
-    ports:
-      - "80:80"
-      - "3000:3000"
-      - "3001:3001"
-      - "2222:22"
+    mysql:
+        image: mysql:5.6
+        env_file:
+            - .env
+        volumes:
+            - database:/var/lib/mysql
+        ports:
+            - "3307:3306"
+
+    magento:
+        image: ricardotulio/ecommerce-platforms
+        volumes:
+            - ./www/:/var/www/
+        ports:
+            - "8080:80"
+        depends_on:
+            - mysql
+
+volumes:
+    database:
+        driver: local
