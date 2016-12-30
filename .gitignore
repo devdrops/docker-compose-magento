@@ -1,3 +1,5 @@
 /www/*
 !/www/.gitkeep
+/db/*
+!/db/.gitkeep
 .env

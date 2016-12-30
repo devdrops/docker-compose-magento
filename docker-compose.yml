@@ -6,7 +6,7 @@ services:
         env_file:
             - .env
         volumes:
-            - database:/var/lib/mysql
+            - ./db:/var/lib/mysql
         ports:
             - "3307:3306"
 
@@ -20,6 +20,3 @@ services:
         depends_on:
             - mysql
 
-volumes:
-    database:
-        driver: local
