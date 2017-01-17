@@ -18,3 +18,8 @@ services:
             - "8080:80"
         depends_on:
             - mysql
+
+    blackfire:
+        image: blackfire/blackfire
+        env_file:
+            - .blackfire_env
