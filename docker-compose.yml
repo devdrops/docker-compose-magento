@@ -22,4 +22,4 @@ services:
     blackfire:
         image: blackfire/blackfire
         env_file:
-            - .blackfire_env
+            - .env
