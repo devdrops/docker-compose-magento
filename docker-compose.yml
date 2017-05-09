@@ -15,11 +15,6 @@ services:
         volumes:
             - ./www/:/var/www/
         ports:
-            - "8080:80"
+            - "8081:80"
         depends_on:
             - mysql
-
-    blackfire:
-        image: blackfire/blackfire
-        env_file:
-            - .env
